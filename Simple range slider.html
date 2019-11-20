@@ -1,0 +1,47 @@
+<div class="radio-group-time">
+					<input type="radio" name="block_calculator_1_time_group" id="block_calculator_1_time_7" class="block-calculator is-checked radio-time" value="35" checked="">
+					<label for="block_calculator_1_time_7">7 Days</label>
+					<input type="radio" name="block_calculator_1_time_group" id="block_calculator_1_time_15" class="block-calculator radio-time " value="40" >
+					<label for="block_calculator_1_time_15">15 Days</label>
+					<input type="radio" name="block_calculator_1_time_group" id="block_calculator_1_time_30" class="block-calculator radio-time" value="50">
+					<label for="block_calculator_1_time_30">30 Days</label>
+					<input type="radio" name="block_calculator_1_time_group" id="block_calculator_1_time_custom" class="block-calculator radio-time" value="0">
+					<label for="block_calculator_1_time_custom">Custom</label>
+				</div>
+
+
+
+<div class="range-slider">
+  <input class="range-slider-range" type="range" value="1" min="1" max="100">
+</div>
+
+<div class="answer">
+  35
+</div>
+<style>
+input.range-slider-range {
+    width: 100%;
+}
+</style>
+
+
+<script>
+$(document).ready(function(){
+
+var rangeChange = $('.range-slider-range').on('change',function(){
+  test();
+});
+
+  function test() {
+ var x = $('[name="block_calculator_1_time_group"]:checked').val();
+var y = $('.range-slider-range').val();
+var ans = x * y;
+$('.answer').html(ans);
+  }
+
+$('.radio-time').click(function(){
+ test();
+
+});
+});
+</script>
